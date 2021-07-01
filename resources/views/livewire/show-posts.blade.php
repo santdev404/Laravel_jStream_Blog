@@ -14,16 +14,19 @@
         
         <x-table>
 
-            <div class="px-6 py-4 ">
+            <div class="px-6 py-4 flex items-center">
                 {{-- <input type="text" wire:model="search"> --}}
-                <x-jet-input class="w-full" type="text" wire:model="search" placeholder="Type something"/>
+                <x-jet-input class="flex-1 mr-4" type="text" wire:model="search" placeholder="Type something"/>
+
+                @livewire('create-post')
+
             </div>
 
             @if ($posts->count())
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                     <tr>
-                        <th wire:click="order('id')" scope="col" class="cursor-pointer px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th wire:click="order('id')" scope="col" class="w-24 cursor-pointer px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             ID
 
                             {{-- Sort --}}
